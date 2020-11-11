@@ -19,22 +19,22 @@ import com.eventos.repository.EventoRepository;
 public class EventoResources {
 	@Autowired
 	private EventoRepository er;
-	
-	@GetMapping(produces="application/json")
-	public @ResponseBody Iterable<Evento> listaEvento(){
-		Iterable<Evento>listaEventos = er.findAll();
-		return listaEventos;	
-		}
-	
+
+	@GetMapping(produces = "application/json")
+	public @ResponseBody Iterable<Evento> listaEvento() {
+		Iterable<Evento> listaEventos = er.findAll();
+		return listaEventos;
+	}
+
 	@PostMapping()
 	public Evento cadastroEvento(@RequestBody @Valid Evento evento) {
-		return er.save(evento);		
+		return er.save(evento);
 	}
-	
+
 	@DeleteMapping()
 	public Evento deletaEvento(@RequestBody Evento evento) {
 		er.delete(evento);
 		return evento;
-		
+
 	}
 }

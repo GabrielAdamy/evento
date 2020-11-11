@@ -7,22 +7,21 @@ import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-
 @Entity
 public class Evento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long codigo;
-	
+
 	@NotBlank
 	private String nome;
-	
+
 	@NotBlank
 	private String local;
-	
+
 	@NotBlank
 	private String data;
-	
+
 	@NotBlank
 	private String horario;
 
@@ -33,8 +32,9 @@ public class Evento {
 		this.data = data;
 		this.horario = horario;
 	}
+
 	public Evento() {
-		
+
 	}
 
 	public long getCodigo() {
@@ -77,5 +77,4 @@ public class Evento {
 		this.horario = horario;
 	}
 
-	
 }
